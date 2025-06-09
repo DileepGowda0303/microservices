@@ -6,4 +6,5 @@ import org.springframework.stereotype.Component;
 public class FilterUtility {
 
 	public static final String CORRELATION_ID = "bank-correlation-id";
+	
 }
