@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: "eurekaserver"
+  config:
+    import: "optional:configserver:http://localhost:8071/"
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+  server:  
+    maxThreadsForPeerReplication: 0
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  management:
+  metrics:
+    tags:
+      application: ${spring.application.name}
+
+  health:
+    readiness-state:
+      enabled: true
+    liveness-state:
+      enabled: true
+  endpoint:
+    health:
+      probes:
+        enabled: true
+server:
+  port: 8070
